@@ -36,7 +36,7 @@ const sendEmailCreateOrder = async (email,orderItems) => {
         // from:'duytan20032015@gmail.com', // sender address
         // to: email, // list of receivers
         from: process.env.MAIL_ACCOUNT,
-        to: process.env.MAIL_ACCOUNT,
+        to: email,
         subject: "Bạn đã đặt hàng tại shop Duy Tân", // Subject line
         text: "Hello world?", // plain text body
         html: `<div><b>Bạn đã đặt hàng thành công tại shop Duy Tân</b></div> ${listItem}`,
