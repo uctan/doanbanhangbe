@@ -43,7 +43,9 @@ const createOrder = (newOrder) => {
                 resolve({
                     status: 'ERR',
                     message: `San pham voi id: ${arrId.join(',')} khong du hang`
-                })
+                }
+               
+            )
             } else {
                 const createdOrder = await Order.create({
                     orderItems,

@@ -13,7 +13,7 @@ const port = process.env.PORT || 3002
 
 app.use(cors())
 app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(bodyParser.json())
 app.use(cookieParser());
 
@@ -22,7 +22,7 @@ routes(app);
 
 mongoose.connect(`${process.env.MONGO_DB}`)
 .then (() => {
-    // console.log('Connect DB succes!')
+    console.log('Connect DB succes!')
 })
 .catch((err) => {
     // console.log('err')
@@ -32,5 +32,5 @@ mongoose.connect(`${process.env.MONGO_DB}`)
 
 
 app.listen(port,() => {
-    // console.log('Server is running in port:', + port)
+    console.log('Server is running in port:', + port)
 })
